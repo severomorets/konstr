@@ -14,10 +14,24 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 .icon_head img:hover{
   opacity: 1;
-  border: 1px solid #9e9e9e;
+  border: 1px solid #e7c752;
 }
 .icon_head .active{
   border: 1px solid red;
   opacity: 1;
 }
-
+.mat-form-field{
+  margin: 5px;
+}
+.flex-container{
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+}
+.flex-container1{
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+}

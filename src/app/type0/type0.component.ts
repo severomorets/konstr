@@ -14,15 +14,21 @@ export class Type0Component implements OnInit {
     depthPlate: 0.5,
     diametr: 500,
     wPlate: 500,
-    hPlate: 600,
-    lPlate: 6,
-    countS: 3,
+    hPlate: 500,
+    lPlate: 5,
+    countS: 2,
     outputH: 100,
     isHeater: false,
     isVibration: false,
     directionFixture: 0,
     materialAttachment: 0,
     materialExecution: 0,
+    mountingOptions:0,
+    materialAttachmentFerm:{
+      type:0,
+      type1:0,
+      type1_val:0,
+    }
   };
 
   rateControl_wPlate = new FormControl('', [Validators.max(2000), Validators.min(50)]);

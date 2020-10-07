@@ -1,82 +1,54 @@
 <div class="icon_head">
 
-  <div >
+  <div>
     <h3>Выбор вида сечения короба</h3>
-    <img (click)="active_type_0 = 0" [ngClass]="{active:active_type_0==0,nonactive:active_type_0!=null&&active_type_0!=0}" src="/assets/img/v_pryam.jpg">
-    <img (click)="active_type_0 = 1" [ngClass]="{active:active_type_0==1,nonactive:active_type_0!=null&&active_type_0!=1}" src="/assets/img/v_krug.jpg">
+    <img (click)="active_type_0 = 0"
+         [ngClass]="{active:active_type_0==0,nonactive:active_type_0!=null&&active_type_0!=0}"
+         src="/assets/img/v_pryam.jpg">
+    <img (click)="active_type_0 = 1"
+         [ngClass]="{active:active_type_0==1,nonactive:active_type_0!=null&&active_type_0!=1}"
+         src="/assets/img/v_krug.jpg">
   </div>
   <div *ngIf="active_type_0!=null">
-    <div >
-      <h3>Выбор места крепления</h3>
-      <img (click)="form_type_0.directionFixture = 0" [ngClass]="{active:form_type_0.directionFixture==0,nonactive:form_type_0.directionFixture!=null}" src="/assets/img/k{{active_type_0}}_0.jpg">
-      <img (click)="form_type_0.directionFixture = 1" [ngClass]="{active:form_type_0.directionFixture==1,nonactive:form_type_0.directionFixture!=null}" src="/assets/img/k{{active_type_0}}_1.jpg">
-      <img (click)="form_type_0.directionFixture = 2" [ngClass]="{active:form_type_0.directionFixture==2,nonactive:form_type_0.directionFixture!=null}" src="/assets/img/k{{active_type_0}}_2.jpg">
-    </div>
     <div>
       <mat-form-field appearance="fill">
         <mat-label>Материал исполнения опорных конструкций</mat-label>
-        <mat-select   [(value)]="form_type_0.materialExecution">
+        <mat-select [(value)]="form_type_0.materialExecution">
           <mat-option *ngFor="let p of dS.materialExecution" [value]="p.val">
             {{p.name}}
           </mat-option>
         </mat-select>
       </mat-form-field>
-    </div>
-    <div *ngIf="form_type_0.directionFixture==0">
-      <h3>Выбор материала места крепления</h3>
-      <img (click)="form_type_0.materialAttachment = 0" [ngClass]="{active:form_type_0.materialAttachment==0,nonactive:form_type_0.materialAttachment!=null}" src="/assets/img/m{{form_type_0.directionFixture}}_0.png">
-      <img (click)="form_type_0.materialAttachment = 1" [ngClass]="{active:form_type_0.materialAttachment==1,nonactive:form_type_0.materialAttachment!=null}" src="/assets/img/m{{form_type_0.directionFixture}}_1.png">
-      <img (click)="form_type_0.materialAttachment = 2" [ngClass]="{active:form_type_0.materialAttachment==2,nonactive:form_type_0.materialAttachment!=null}" src="/assets/img/m{{form_type_0.directionFixture}}_2.png">
-    </div>
-
-    <div *ngIf="form_type_0.directionFixture==1">
-      <h3>Выбор материала места крепления</h3>
-      <img (click)="form_type_0.materialAttachment = 0" [ngClass]="{active:form_type_0.materialAttachment==0,nonactive:form_type_0.materialAttachment!=null}" src="/assets/img/m{{form_type_0.directionFixture}}_0.png">
-      <img (click)="form_type_0.materialAttachment = 4" [ngClass]="{active:form_type_0.materialAttachment==4,nonactive:form_type_0.materialAttachment!=null}" src="/assets/img/m{{form_type_0.directionFixture}}_1.png">
-      <img (click)="form_type_0.materialAttachment = 5" [ngClass]="{active:form_type_0.materialAttachment==5,nonactive:form_type_0.materialAttachment!=null}" src="/assets/img/m{{form_type_0.directionFixture}}_2.png">
-      <img (click)="form_type_0.materialAttachment = 6" [ngClass]="{active:form_type_0.materialAttachment==6,nonactive:form_type_0.materialAttachment!=null}" src="/assets/img/m{{form_type_0.directionFixture}}_3.png">
-      <img (click)="form_type_0.materialAttachment = 7" [ngClass]="{active:form_type_0.materialAttachment==7,nonactive:form_type_0.materialAttachment!=null}" src="/assets/img/m{{form_type_0.directionFixture}}_4.png">
-      <img (click)="form_type_0.materialAttachment = 8" [ngClass]="{active:form_type_0.materialAttachment==8,nonactive:form_type_0.materialAttachment!=null}" src="/assets/img/m{{form_type_0.directionFixture}}_5.png">
-      <img (click)="form_type_0.materialAttachment = 9" [ngClass]="{active:form_type_0.materialAttachment==9,nonactive:form_type_0.materialAttachment!=null}" src="/assets/img/m{{form_type_0.directionFixture}}_6.png">
-      <img (click)="form_type_0.materialAttachment = 10" [ngClass]="{active:form_type_0.materialAttachment==10,nonactive:form_type_0.materialAttachment!=null}" src="/assets/img/m{{form_type_0.directionFixture}}_7.png">
-    </div>
-    <div *ngIf="form_type_0.directionFixture==2">
-      <h3>Выбор материала места крепления</h3>
-      <img (click)="form_type_0.materialAttachment = 0" [ngClass]="{active:form_type_0.materialAttachment==0,nonactive:form_type_0.materialAttachment!=null}" src="/assets/img/m{{form_type_0.directionFixture}}_0.png">
-    </div>
-    <div>
       <mat-form-field appearance="fill">
         <mat-label>Толщина листа</mat-label>
-        <mat-select   [(value)]="form_type_0.depthPlate">
+        <mat-select [(value)]="form_type_0.depthPlate">
           <mat-option *ngFor="let p of dS.depthPlate" [value]="p">
             {{p}}
           </mat-option>
         </mat-select>
       </mat-form-field>
-    </div>
-    <div *ngIf="active_type_0==1">
-      <mat-form-field class="example-full-width">
-        <mat-label>Диаметр, мм</mat-label>
-        <input  type="number" [formControl]="rateControl_wPlate" matInput [(ngModel)]="form_type_0.diametr"  placeholder="от 50 до 2000 мм">
-        <mat-error *ngIf="rateControl_diametr.hasError('max') && !rateControl_diametr.hasError('min')">
-          введите значение в диапазоне от 50 до 2000
-        </mat-error>
-      </mat-form-field>
-    </div>
-    <div *ngIf="active_type_0==0">
-      <mat-form-field class="example-full-width">
+      <mat-form-field class="example-full-width" *ngIf="active_type_0==0">
         <mat-label>Ширина короба, мм</mat-label>
-        <input  type="number" [formControl]="rateControl_wPlate" matInput [(ngModel)]="form_type_0.wPlate"  placeholder="от 50 до 2000 мм">
+        <input type="number" [formControl]="rateControl_wPlate" matInput [(ngModel)]="form_type_0.wPlate"
+               placeholder="от 50 до 2000 мм">
         <mat-error *ngIf="rateControl_wPlate.hasError('max') && !rateControl_wPlate.hasError('min')">
           введите значение в диапазоне от 50 до 2000
         </mat-error>
       </mat-form-field>
-    </div>
-    <div *ngIf="active_type_0==0">
-      <mat-form-field class="example-full-width">
+
+      <mat-form-field class="example-full-width"*ngIf="active_type_0==0">
         <mat-label>Высота короба, мм</mat-label>
-        <input  type="number" [formControl]="rateControl_hPlate" matInput [(ngModel)]="form_type_0.hPlate"  placeholder="от 50 до 2000 мм">
+        <input type="number" [formControl]="rateControl_hPlate" matInput [(ngModel)]="form_type_0.hPlate"
+               placeholder="от 50 до 2000 мм">
         <mat-error *ngIf="rateControl_hPlate.hasError('max') && !rateControl_hPlate.hasError('min')">
+          введите значение в диапазоне от 50 до 2000
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width" *ngIf="active_type_0==1">
+        <mat-label>Диаметр, мм</mat-label>
+        <input type="number" [formControl]="rateControl_wPlate" matInput [(ngModel)]="form_type_0.diametr"
+               placeholder="от 50 до 2000 мм">
+        <mat-error *ngIf="rateControl_diametr.hasError('max') && !rateControl_diametr.hasError('min')">
           введите значение в диапазоне от 50 до 2000
         </mat-error>
       </mat-form-field>
@@ -84,37 +56,158 @@
     <div>
       <mat-form-field class="example-full-width">
         <mat-label>Длина участка воздуховода, м</mat-label>
-        <input  type="number" [formControl]="rateControl_lPlate" matInput [(ngModel)]="form_type_0.lPlate"  placeholder="">
+        <input type="number" [formControl]="rateControl_lPlate" matInput [(ngModel)]="form_type_0.lPlate"
+               placeholder="">
         <mat-error *ngIf="rateControl_lPlate.hasError('max') && !rateControl_lPlate.hasError('min')">
           некорректное значение
         </mat-error>
       </mat-form-field>
-    </div>
-    <div>
       <mat-form-field class="example-full-width">
         <mat-label>Количество крепежных узлов, шт</mat-label>
-        <input  type="number" [formControl]="rateControl_countS" matInput [(ngModel)]="form_type_0.countS"  placeholder="">
+        <input type="number" [formControl]="rateControl_countS" matInput [(ngModel)]="form_type_0.countS"
+               placeholder="">
         <mat-error *ngIf="rateControl_countS.hasError('max') && !rateControl_countS.hasError('min')">
           некорректное значение
         </mat-error>
       </mat-form-field>
-    </div>
-    <div>
+
       <mat-form-field class="example-full-width">
         <mat-label>Расстояние до потолка, м</mat-label>
-        <input  type="number" [formControl]="rateControl_outputH" matInput [(ngModel)]="form_type_0.outputH"   placeholder="">
+        <input type="number" [formControl]="rateControl_outputH" matInput [(ngModel)]="form_type_0.outputH"
+               placeholder="">
         <mat-error *ngIf="rateControl_outputH.hasError('max') && !rateControl_outputH.hasError('min')">
           некорректное значение
         </mat-error>
       </mat-form-field>
-    </div>
-    <div>
-      <mat-slide-toggle (change)="setValueIs(form_type_0.isHeater,$event)">Наличие утеплителя</mat-slide-toggle>
-      <mat-slide-toggle (change)="setValueIs(form_type_0.isVibration,$event)">Наличие виброизоляции</mat-slide-toggle>
+      <span style="float: left;margin-right: 20px">
+        <mat-slide-toggle (change)="setValueIs(form_type_0.isHeater,$event)">Наличие утеплителя</mat-slide-toggle>
+        <br>
+        <mat-slide-toggle (change)="setValueIs(form_type_0.isVibration,$event)">Наличие виброизоляции</mat-slide-toggle>
+      </span>
+
     </div>
     <div>
 
-
     </div>
+  </div>
+  <div *ngIf="active_type_0!=null"  class="flex-container">
+    <div style="width: 30%">
+      <h3>Выбор места крепления</h3>
+      <img (click)="form_type_0.directionFixture = 0"
+           [ngClass]="{active:form_type_0.directionFixture==0,nonactive:form_type_0.directionFixture!=null}"
+           src="/assets/img/k{{active_type_0}}_0.jpg">
+      <img (click)="form_type_0.directionFixture = 1"
+           [ngClass]="{active:form_type_0.directionFixture==1,nonactive:form_type_0.directionFixture!=null}"
+           src="/assets/img/k{{active_type_0}}_1.jpg">
+      <img (click)="form_type_0.directionFixture = 2"
+           [ngClass]="{active:form_type_0.directionFixture==2,nonactive:form_type_0.directionFixture!=null}"
+           src="/assets/img/k{{active_type_0}}_2.jpg">
+    </div>
+    <div style="width: 40%">
+      <h3>Выбор материала места крепления</h3>
+      <div *ngIf="form_type_0.directionFixture==0">
+        <img (click)="form_type_0.materialAttachment = 0"
+             [ngClass]="{active:form_type_0.materialAttachment==0,nonactive:form_type_0.materialAttachment!=null}"
+             src="/assets/img/m{{form_type_0.directionFixture}}_0.png">
+        <img (click)="form_type_0.materialAttachment = 1"
+             [ngClass]="{active:form_type_0.materialAttachment==1,nonactive:form_type_0.materialAttachment!=null}"
+             src="/assets/img/m{{form_type_0.directionFixture}}_1.png">
+        <img (click)="form_type_0.materialAttachment = 2"
+             [ngClass]="{active:form_type_0.materialAttachment==2,nonactive:form_type_0.materialAttachment!=null}"
+             src="/assets/img/m{{form_type_0.directionFixture}}_2.png">
+        <br>
+        <mat-button-toggle-group *ngIf="form_type_0.materialAttachment==1" name="fontStyle" aria-label="Font Style" [(value)]="form_type_0.materialAttachmentFerm.type">
+          <mat-button-toggle [value]="0" >ЖБИ</mat-button-toggle>
+          <mat-button-toggle [value]="1">Металлопрокат</mat-button-toggle>
+        </mat-button-toggle-group>
+        <div *ngIf="form_type_0.materialAttachmentFerm.type==1&&form_type_0.materialAttachment==1">
+          <mat-button-toggle-group name="fontStyle" aria-label="Font Style" [(value)]="form_type_0.materialAttachmentFerm.type1">
+            <mat-button-toggle [value]="0" >Двутавр/Швеллер</mat-button-toggle>
+            <mat-button-toggle [value]="1">Труба квадратная</mat-button-toggle>
+            <mat-button-toggle [value]="2">Уголок</mat-button-toggle>
+          </mat-button-toggle-group>
+          <div>
+            <mat-form-field appearance="fill" *ngIf="form_type_0.materialAttachmentFerm.type1==0">
+              <mat-label>Высота швеллера/двутавра,мм</mat-label>
+              <mat-select [(value)]="form_type_0.materialAttachmentFerm.type1_val">
+                <mat-option *ngFor="let p of dS.I_BeamChannel" [value]="p">
+                  {{p}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="fill" *ngIf="form_type_0.materialAttachmentFerm.type1==1">
+              <mat-label>Размер трубы,мм</mat-label>
+              <mat-select [(value)]="form_type_0.materialAttachmentFerm.type1_val">
+                <mat-option *ngFor="let p of dS.squareTube" [value]="p">
+                  {{p}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="fill" *ngIf="form_type_0.materialAttachmentFerm.type1==2">
+              <mat-label>Полка уголка,мм</mat-label>
+              <mat-select [(value)]="form_type_0.materialAttachmentFerm.type1_val">
+                <mat-option *ngFor="let p of dS.cornerShelf" [value]="p">
+                  {{p}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+
+        </div>
+      </div>
+      <div *ngIf="form_type_0.directionFixture==1">
+
+        <img (click)="form_type_0.materialAttachment = 0"
+             [ngClass]="{active:form_type_0.materialAttachment==0,nonactive:form_type_0.materialAttachment!=null}"
+             src="/assets/img/m{{form_type_0.directionFixture}}_0.png">
+        <img (click)="form_type_0.materialAttachment = 4"
+             [ngClass]="{active:form_type_0.materialAttachment==4,nonactive:form_type_0.materialAttachment!=null}"
+             src="/assets/img/m{{form_type_0.directionFixture}}_1.png">
+        <img (click)="form_type_0.materialAttachment = 5"
+             [ngClass]="{active:form_type_0.materialAttachment==5,nonactive:form_type_0.materialAttachment!=null}"
+             src="/assets/img/m{{form_type_0.directionFixture}}_2.png">
+        <img (click)="form_type_0.materialAttachment = 6"
+             [ngClass]="{active:form_type_0.materialAttachment==6,nonactive:form_type_0.materialAttachment!=null}"
+             src="/assets/img/m{{form_type_0.directionFixture}}_3.png">
+        <img (click)="form_type_0.materialAttachment = 7"
+             [ngClass]="{active:form_type_0.materialAttachment==7,nonactive:form_type_0.materialAttachment!=null}"
+             src="/assets/img/m{{form_type_0.directionFixture}}_4.png">
+        <img (click)="form_type_0.materialAttachment = 8"
+             [ngClass]="{active:form_type_0.materialAttachment==8,nonactive:form_type_0.materialAttachment!=null}"
+             src="/assets/img/m{{form_type_0.directionFixture}}_5.png">
+        <img (click)="form_type_0.materialAttachment = 9"
+             [ngClass]="{active:form_type_0.materialAttachment==9,nonactive:form_type_0.materialAttachment!=null}"
+             src="/assets/img/m{{form_type_0.directionFixture}}_6.png">
+        <img (click)="form_type_0.materialAttachment = 10"
+             [ngClass]="{active:form_type_0.materialAttachment==10,nonactive:form_type_0.materialAttachment!=null}"
+             src="/assets/img/m{{form_type_0.directionFixture}}_7.png">
+      </div>
+      <div *ngIf="form_type_0.directionFixture==2">
+
+        <img (click)="form_type_0.materialAttachment = 0"
+             [ngClass]="{active:form_type_0.materialAttachment==0,nonactive:form_type_0.materialAttachment!=null}"
+             src="/assets/img/m{{form_type_0.directionFixture}}_0.png">
+      </div>
+    </div>
+    <div style="width: 30%">
+      <h3>Выбор варианта крепления</h3>
+      <img (click)="form_type_0.mountingOptions = 0"
+           [ngClass]="{active:form_type_0.mountingOptions==0,nonactive:form_type_0.mountingOptions!=null}"
+           src="/assets/img/trav_0.jpg">
+      <img (click)="form_type_0.mountingOptions = 1"
+           [ngClass]="{active:form_type_0.mountingOptions==1,nonactive:form_type_0.mountingOptions!=null}"
+           src="/assets/img/trav_1.jpg">
+      <img (click)="form_type_0.mountingOptions = 2"
+           [ngClass]="{active:form_type_0.mountingOptions==2,nonactive:form_type_0.mountingOptions!=null}"
+           src="/assets/img/trav_2.jpg">
+    </div>
+
+
+
+
+
+
+
   </div>
 </div>
