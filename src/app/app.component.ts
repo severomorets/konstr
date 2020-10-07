@@ -13,38 +13,15 @@ export class AppComponent  implements OnInit{
   active_type = null;
 
   active_type_3 = null;
-  form_type_0 = {
-    type: null,
-    depthPlate: 0.5,
-    diametr: 500,
-    wPlate: 500,
-    hPlate: 600,
-    lPlate: 6,
-    countS: 3,
-    outputH: 100,
-    isHeater: false,
-    isVibration: false,
-  };
-  depthPlate = [0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.9, 1, 1.1, 1.2, 1.5, 2, 2.5];
-  rateControl_wPlate = new FormControl('', [Validators.max(2000), Validators.min(50)]);
-  rateControl_diametr = new FormControl('', [Validators.max(2000), Validators.min(50)]);
-  rateControl_hPlate = new FormControl('', [Validators.max(2000), Validators.min(50)]);
-  rateControl_lPlate = new FormControl('', [Validators.max(5000), Validators.min(1)]);
-  rateControl_countS = new FormControl('', [Validators.max(100), Validators.min(1)]);
-  rateControl_outputH = new FormControl('', [Validators.max(5000), Validators.min(0)]);
+
+
   constructor() {
 
   }
   ngOnInit() {
     this.init();
   }
-  setValueIs(v, e){
-    if (e.checked){
-      v = true;
-    }else{
-      v = false;
-    }
-  }
+
   init(){
     let scene = new THREE.Scene();
     let camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 0.1, 1000);

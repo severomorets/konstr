@@ -10,10 +10,14 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from "@angular/material/form-field";
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { Type0Component } from './type0/type0.component';
+import { Type1Component } from './type1/type1.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    Type0Component,
+    Type1Component
   ],
   imports: [
 

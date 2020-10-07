@@ -1,0 +1,50 @@
+<div class="icon_head">
+
+  <div>
+    <mat-form-field class="example-full-width">
+      <mat-label>Длина трубопровода, м</mat-label>
+      <input  type="number" [formControl]="rateControl_lengthPipeline" matInput [(ngModel)]="form_type.lengthPipeline"  placeholder="">
+      <mat-error *ngIf="rateControl_lengthPipeline.hasError('max') && !rateControl_lengthPipeline.hasError('min')">
+        некорректное значение
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field appearance="fill">
+      <mat-label>Материал исполнения опорных конструкций</mat-label>
+      <mat-select   [(value)]="form_type.materialExecution">
+        <mat-option *ngFor="let p of dS.materialExecution" [value]="p.val">
+          {{p.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field appearance="fill">
+      <mat-label>Вид трубопровода </mat-label>
+      <mat-select   [(value)]="form_type.typePipeline">
+        <mat-option *ngFor="let p of dS.typePipeline" [value]="p.val">
+          {{p.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field class="example-full-width">
+      <mat-label>Количество крепежных узлов, шт</mat-label>
+      <input  type="number" [formControl]="rateControl_countS" matInput [(ngModel)]="form_type.countS"  placeholder="">
+      <mat-error *ngIf="rateControl_countS.hasError('max') && !rateControl_countS.hasError('min')">
+        некорректное значение
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field class="example-full-width">
+      <mat-label>Расстояние до потолка, м</mat-label>
+      <input  type="number" [formControl]="rateControl_outputH" matInput [(ngModel)]="form_type.outputH"   placeholder="">
+      <mat-error *ngIf="rateControl_outputH.hasError('max') && !rateControl_outputH.hasError('min')">
+        некорректное значение
+      </mat-error>
+    </mat-form-field>
+  </div>
+</div>
