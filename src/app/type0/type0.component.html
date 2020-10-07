@@ -2,10 +2,10 @@
 
   <div>
     <h3>Выбор вида сечения короба</h3>
-    <img (click)="active_type_0 = 0"
+    <img (click)="active_type_0 = 0;updateCylinder()"
          [ngClass]="{active:active_type_0==0,nonactive:active_type_0!=null&&active_type_0!=0}"
          src="/assets/img/v_pryam.jpg">
-    <img (click)="active_type_0 = 1"
+    <img (click)="active_type_0 = 1;updateCylinder()"
          [ngClass]="{active:active_type_0==1,nonactive:active_type_0!=null&&active_type_0!=1}"
          src="/assets/img/v_krug.jpg">
   </div>
@@ -202,12 +202,6 @@
            [ngClass]="{active:form_type_0.mountingOptions==2,nonactive:form_type_0.mountingOptions!=null}"
            src="/assets/img/trav_2.jpg">
     </div>
-
-
-
-
-
-
-
   </div>
 </div>
+<div  id="canvas1"></div>
