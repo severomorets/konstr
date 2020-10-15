@@ -3,6 +3,9 @@ import {FormControl, Validators} from '@angular/forms';
 import {DataService} from '../-data.service';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
+import * as OBJLoader from 'three-obj-loader';
+OBJLoader(THREE);
+
 
 @Component({
   selector: 'app-type0',
@@ -12,6 +15,7 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 export class Type0Component implements OnInit {
   active_type_0 = null
   scene = new THREE.Scene();
+  THREE
   ventilation = null
   form_type_0 = {
 
@@ -56,6 +60,7 @@ export class Type0Component implements OnInit {
   init(){
     let canvas = document.getElementById('canvas1');
 
+
     this.scene.background = new THREE.Color('black');
     const fov = 45;
     const aspect =  window.innerWidth / window.innerHeight;  // the canvas default
@@ -77,7 +82,7 @@ export class Type0Component implements OnInit {
     const color = 0xFFFFFF;
     const intensity = 1;
     const light = new THREE.DirectionalLight(color, intensity);
-    light.position.set(45, 100, 50);
+    light.position.set(450, 1000, 500);
     light.target.position.set(-5, 50, 50);
     light.castShadow = true;
     this.scene.add(light);
@@ -86,7 +91,7 @@ export class Type0Component implements OnInit {
     const planeSize = 400;
 
     const loader = new THREE.TextureLoader();
-    const texture = loader.load('https://i.plitka-sdvk.ru/i/plitka/Natural-Mosaic/Pharaoh/145769.jpg');
+    const texture = loader.load('assets/img/145769.jpg');
     texture.wrapS = THREE.RepeatWrapping;
     texture.wrapT = THREE.RepeatWrapping;
     texture.magFilter = THREE.NearestFilter;
@@ -116,18 +121,39 @@ export class Type0Component implements OnInit {
     wall1.position.z = 2
     this.scene.add(wall1);
 
+    this.THREE = THREE;
+    const objLoader = new this.THREE.OBJLoader();
+
+    objLoader.load('assets/obj/3D_P.obj', (object) => {
+      // object.x = 1000
+      // object.y = 0
+      // object.width = 5
+      object.position.x = 500
+      object.position.z = 0
+      object.position.y = 500
+      console.log('object',object)
+      object.traverse( ( child ) =>{
 
 
 
-    this.updateCylinder()
+          // child.material.map = texture;
+
+
+
+      });
+
+      object.position.y =  5;
+      this.scene.add( object );
+    });
+    // this.updateCylinder()
     let renderScene = () =>{
       requestAnimationFrame( renderScene );
 
-
+      if (camera.position.y<1){camera.position.y = 1}
       // cylinder.parameters.radialSegments = this.active_type_0==0?4:20
       renderer.render( this.scene, camera );
 
-      console.log(camera.position.x,camera.position.y,camera.position.z)
+      // console.log(camera.position.x,camera.position.y,camera.position.z)
     };
 
     renderScene()

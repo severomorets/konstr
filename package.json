@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --port 8080",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -26,8 +26,10 @@
     "dat.gui": "^0.7.7",
     "rxjs": "~6.6.0",
     "three": "^0.121.1",
+    "three-obj-loader": "^1.1.3",
     "three-orbitcontrols": "^2.110.3",
     "tslib": "^2.0.0",
+    "wwobjloader2": "^2.4.2",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
